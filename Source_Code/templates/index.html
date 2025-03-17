@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Background with Image and Opacity */
+    body {
+        background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)),
+                    url('/static/images/bg_image6.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: 'Century', sans-serif; /* Century font applied here */
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+    /* Title Styling - Aligning it to the left */
+    h1 {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        font-family: 'Century', serif; /* Century font applied */
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #f8f9fa;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        margin: 50px 0 20px 30px; /* Added margin and aligned left */
+    }
+
+    /* Paragraph Styling - Padding on left and right */
+    p {
+        opacity: 0;
+        animation: fadeIn 3s forwards 1s;
+        text-align: justify;
+        font-family: 'Century', serif; /* Century font applied */
+        font-size: 1.3rem;
+        line-height: 1.8;
+        color: #eaeaea;
+        margin: 30px 130px 0 30px; /* Added padding to left and right */
+    }
+
+    /* Fade-in animation for content */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<h1>Adult Height Prediction</h1>
+
+<p>Adult height depends on various factors, including genetics, family background, and lifestyle. This project looks beyond simple parental influence to include elements like birth order, daily activities, diet, and living conditions, creating a more detailed and reliable way to predict how tall someone will grow.</p>
+<p>By studying a wide range of influences, this project offers a new approach to understanding growth patterns. It emphasizes the importance of clean and accurate data while considering the many factors that shape height. This work aims to provide families and healthcare professionals with better insights for tracking and supporting a child's growth.</p>
+{% endblock %}

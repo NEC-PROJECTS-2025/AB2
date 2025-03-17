@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Background with Image and Opacity */
+    body {
+        background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+                    url('/static/images/bg_image6.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: 'Century', sans-serif; /* Century font applied here */
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+    /* Title Styling - Aligning it to the left */
+    h1 {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        font-family: 'Century', serif; /* Century font applied */
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #f8f9fa;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        margin: 50px 0 20px 50px; /* Added margin and aligned left */
+    }
+
+    /* Table Styling */
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 50px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color:rgb(33, 34, 35);
+    }
+
+    /* Fade-in animation for content */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<h1>Model Evaluation Metrics</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-score</th>
+            <th>Accuracy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Linear Regression</td>
+            <td>0.8314</td>
+            <td>0.9024</td>
+            <td>0.8654</td>
+            <td>0.6409</td>
+        </tr>
+        <tr>
+            <td>SVR Linear</td>
+            <td>0.8202</td>
+            <td>0.8902</td>
+            <td>0.8538</td>
+            <td>0.6363</td>
+        </tr>
+        <tr>
+            <td>XGBoost</td>
+            <td>0.7912</td>
+            <td>0.878</td>
+            <td>0.8323</td>
+            <td>0.6462</td>
+        </tr>
+        <tr>
+            <td>LightGBM</td>
+            <td>0.8352</td>
+            <td>0.8658</td>
+            <td>0.8502</td>
+            <td>0.6920</td>
+        </tr>
+        <tr>
+            <td>MPH Model</td>
+            <td>0.8314</td>
+            <td>0.9024</td>
+            <td>0.8655</td>
+            <td>0.6409</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

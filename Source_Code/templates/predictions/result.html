@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+                        url('/static/images/updated_bg_height2.png') no-repeat center center fixed; /* Added gradient and background image */
+            background-size: cover; /* Ensure the image covers the whole background */
+            color: #f0f0f0; /* Light color for text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 250, 240, 0.9); /* Warm ivory color with slight transparency */
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333333; /* Dark gray for the title */
+        }
+
+        .prediction {
+            font-size: 2em;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #4682b4; /* Steel blue for the prediction text */
+        }
+
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -10px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4682b4; /* Steel blue button */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #5a9bd4; /* Slightly brighter blue on hover */
+        }
+        
+        /* Back button style */
+        .back-button {
+            background: linear-gradient(135deg,rgb(239, 62, 46),rgb(243, 62, 22)); /* Warm orange gradient */
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg,rgb(247, 92, 57),rgb(247, 78, 40)); /* Same color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Predicted Height</h1>
+    <div class="prediction">
+        {{ prediction_inches }} inches ({{ prediction_cm }} cm)
+    </div>
+
+        <button onclick="window.location.href='{{ url_for('predict') }}'">Try Again</button>
+        <button type="button" class="back-button" onclick="window.location.href='{{ url_for('home') }}'">Back</button>
+    </div>
+</body>
+</html>

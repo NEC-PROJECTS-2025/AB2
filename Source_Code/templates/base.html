@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default("Adult Height Prediction") }}</title>
+    <style>
+        body {
+            font-family: 'Century', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        header {
+            background: linear-gradient(90deg, #343A40, #343A40);
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: static;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 10px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+            width: 100%;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            font-family: 'Poppins', Arial, sans-serif;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            margin: 0;
+        }
+
+        .team-info {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #dfe6e9;
+            white-space: nowrap;
+            font-family: 'Century', sans-serif;
+        }
+
+        .team-info span {
+            margin-right: 15px;
+        }
+
+        nav {
+            margin-top: 0px;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .navbar li {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #fff;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navbar li a:hover {
+            color: #dfe6e9;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid #dfe6e9;
+            width: 80%;
+            margin: 10px auto;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+        <div class="header-content">
+            <div class="project-title">{{ title | default("Beyond Parental Height: A Multi-Model Deep Learning Approach for Personalized Adult Height Prediction") }}</div>
+            <div class="team-info">
+                <span>Team Members: Siva Nagendra, Gowtham, Ravi Sankar  |</span>
+                <span>Guide: Dr. S.Siva Nageswara Rao  |</span>
+                <span>Co-ordinator: D.Venkata Reddy</span>
+            </div>
+            <hr>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Project</a></li>
+                    <li><a href="{{ url_for('predict') }}"><i class="fas fa-calculator"></i> Prediction</a></li>
+                    <li><a href="{{ url_for('metrics') }}"><i class="fas fa-chart-line"></i> Metrics</a></li>
+                    <li><a href="{{ url_for('flowchart') }}"><i class="fas fa-sitemap"></i> Flowchart</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

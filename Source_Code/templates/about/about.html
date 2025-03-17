@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="about-container">
+    <h1 class="animated-title">About the Project</h1>
+    <p class="animated-text">Advanced height prediction model using deep learning, integrating genetic, environmental, and lifestyle factors with robust preprocessing for accuracy, including data normalization, feature selection, and outlier handling for improved model performance and generalization.</p>
+
+    <!-- Flex container for Goals and Technologies -->
+    <div class="content-row">
+        <div class="goals-section">
+            <h2 class="animated-title">Project Goals</h2>
+            <ul class="animated-text">
+                <li>Enhance prediction accuracy using advanced feature engineering.</li>
+                <li>Integrate genetic, lifestyle, and socioeconomic factors.</li>
+                <li>Improve healthcare outcomes with reliable growth tools.</li>
+                <li>Deliver robust models through data preprocessing methods.</li>
+            </ul>
+        </div>
+
+        <div class="technologies-section">
+            <h2 class="animated-title">Technologies Used</h2>
+            <ul class="animated-text">
+                <li>Machine Learning Models : Linear Regression, SVR, XGBoost, LightGBM</li>
+                <li>Framework : Flask</li>
+                <li>Programming Languages : Python</li>
+                <li>Datasets : Galton's height data</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+  /* Background with Image and Opacity */
+  .about-container {
+    background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+                url('/static/images/bg_image6.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px;
+    color: #fff;
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    min-height: 100vh; /* Ensure full height without overlapping navbar */
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Century', sans-serif;
+    margin-top: 0px; /* Adjust this value based on navbar height */
+    padding-top: 80px; /* Add padding to avoid overlapping navbar */
+}
+
+
+  /* Typography for Titles */
+  .animated-title {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    font-family: 'Century', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Reduced margin */
+    color: #f8f9fa;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Paragraph and List Styling */
+  .animated-text {
+    opacity: 0;
+    animation: fadeIn 3s forwards 1s;
+    font-family: 'Century', serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #eaeaea;
+    margin-bottom: 15px; /* Reduced margin */
+    text-align: justify;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 5px; /* Reduced margin */
+    font-family: 'Century', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #eaeaea;
+  }
+
+  /* Content Row Layout */
+  .content-row {
+    display: flex;
+    gap: 0px; /* Reduced gap between sections */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px; /* Reduced margin to bring sections closer */
+  }
+
+  .goals-section, .technologies-section {
+    width: 45%; /* Adjusted for better layout */
+  }
+
+  /* Fade-in animation for content */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Prevent body overflow */
+  body {
+    overflow: hidden; /* Disable scrolling */
+    height: 100vh; /* Ensure body height fits the viewport */
+  }
+</style>
+{% endblock %}

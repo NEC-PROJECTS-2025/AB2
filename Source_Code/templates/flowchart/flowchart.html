@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="project-container">
+    <h1 class="animated-title">Project Flowchart</h1>
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/flowchart.jpg') }}" alt="Project Flowchart">
+    </div>
+</div>
+
+<style>
+  /* Background with Image and Opacity */
+  .project-container {
+    background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+                url('/static/images/bg_image6.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh; /* Ensure full viewport height without scrolling */
+    box-sizing: border-box;
+    font-family: 'Century', serif;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  /* Typography for Titles */
+  .animated-title {
+    font-family: 'Century', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px; /* Reduced space between heading and image */
+    color: #f8f9fa;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+  }
+
+  /* Image Styling */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align closer to the top */
+    height: calc(100vh - 60px); /* Adjust height to fit within viewport */
+  }
+
+  .image-container img {
+    max-width: 80%;
+    max-height: 60vh; /* Limit the height of the image */
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 3s forwards 1s;
+    opacity: 0;
+  }
+
+  /* Fade-in animation for content */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Prevent body overflow */
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden; /* Remove scrolling */
+  }
+</style>
+{% endblock %}
